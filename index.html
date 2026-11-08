@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI & Data Science Roadmap</title>
+<meta name="description" content="The 2027 AI & Data Science roadmap in two boats: fundamentals and AI skills, with every resource. By @aiwith.ak">
+<meta property="og:title" content="⛵ The AI & Data Science Roadmap">
+<meta property="og:description" content="There's no weekend version of this. Here's the real one. Boat One: fundamentals. Boat Two: where the field is going.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛵</text></svg>">
+<style>
+  :root {
+    --bg: #fbf7f0; --surface: #ffffff; --ink: #2a1f17; --muted: #6f6157; --line: #eadfce;
+    --accent: #b8860b; --accent-soft: #fdf2cf; --boat1: #8a3b2e; --boat2: #2f5d7c; --link: #8a5a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17120e; --surface: #211a14; --ink: #f6ede1; --muted: #b9a998; --line: #3a2f25;
+      --accent: #fae284; --accent-soft: #3a3016; --boat1: #e8a08f; --boat2: #9cc6e4; --link: #fae284;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17120e; --surface: #211a14; --ink: #f6ede1; --muted: #b9a998; --line: #3a2f25;
+    --accent: #fae284; --accent-soft: #3a3016; --boat1: #e8a08f; --boat2: #9cc6e4; --link: #fae284;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+  header.hero { padding: 64px 0 36px; text-align: center; }
+  .eyebrow { letter-spacing: .22em; font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+  h1 { font-weight: 800; font-size: clamp(36px, 8vw, 60px); line-height: 1.05; margin: 14px 0 6px; letter-spacing: -.01em; }
+  h1 .year { color: var(--accent); display: block; }
+  h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-style: italic; color: var(--accent); font-size: .78em; display: block; margin-top: 6px; }
+  .tagline { font-family: Georgia, serif; font-style: italic; font-size: 20px; color: var(--muted); margin: 18px 0 0; }
+  .intro { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; margin: 0 0 28px; }
+  .intro p { margin: 0; }
+  nav.toc { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 40px; }
+  nav.toc .boat { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; }
+  nav.toc h2 { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; margin: 0 0 8px; }
+  nav.toc .b1 h2 { color: var(--boat1); } nav.toc .b2 h2 { color: var(--boat2); }
+  nav.toc ol { margin: 0; padding-left: 20px; font-size: 15px; }
+  nav.toc a { color: var(--ink); text-decoration: none; }
+  nav.toc a:hover { color: var(--link); text-decoration: underline; }
+  .boat-head { display: flex; align-items: baseline; gap: 12px; margin: 48px 0 8px; padding-bottom: 10px; border-bottom: 2px solid var(--line); }
+  .boat-head .tag { font-size: 12px; letter-spacing: .2em; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+  .boat-head.one .tag { color: var(--boat1); border: 1.5px solid var(--boat1); }
+  .boat-head.two .tag { color: var(--boat2); border: 1.5px solid var(--boat2); }
+  .boat-head h2 { margin: 0; font-size: 26px; font-family: Georgia, serif; font-style: italic; font-weight: 700; }
+  section.step { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px; margin: 18px 0; scroll-margin-top: 16px; }
+  section.step h3 { margin: 0 0 6px; font-size: 22px; line-height: 1.25; display: flex; gap: 12px; align-items: baseline; }
+  section.step h3 .n { flex: none; width: 34px; height: 34px; border-radius: 50%; display: inline-grid; place-items: center; font-size: 16px; background: var(--accent-soft); color: var(--ink); font-weight: 800; transform: translateY(-2px); }
+  .lede { color: var(--muted); margin: 6px 0 14px; }
+  h4 { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 18px 0 6px; }
+  :root:not([data-theme="dark"]) h4 { color: #946c00; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h4 { color: var(--accent); } }
+  ul, ol { padding-left: 22px; margin: 6px 0; }
+  li { margin: 4px 0; }
+  a { color: var(--link); text-underline-offset: 3px; }
+  .res { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 0; padding: 0; list-style: none; }
+  .res li { margin: 0; }
+  .res a { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); text-decoration: none; color: var(--ink); font-weight: 600; font-size: 15px; }
+  .res a:hover { border-color: var(--accent); }
+  .res a::after { content: "↗"; color: var(--muted); font-weight: 400; }
+  .res small { display: block; font-weight: 400; color: var(--muted); }
+  .note { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 14px 0 0; font-style: italic; }
+  footer { text-align: center; padding: 48px 0 64px; color: var(--muted); }
+  footer .sign { font-family: Georgia, serif; font-style: italic; font-size: 20px; color: var(--ink); margin: 0 0 8px; }
+  footer a { font-weight: 700; }
+  .theme-btn { position: fixed; top: 12px; right: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; width: 40px; height: 40px; font-size: 18px; cursor: pointer; }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    nav.toc { grid-template-columns: 1fr; }
+    section.step { padding: 20px 18px; }
+    header.hero { padding-top: 56px; }
+  }
+</style>
+</head>
+<body>
+<button class="theme-btn" id="theme" aria-label="Toggle light or dark theme">◐</button>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">⛵ by @aiwith.ak</div>
+    <h1><span class="year">2027</span>AI &amp; Data Science <em>Roadmap</em></h1>
+    <p class="tagline">There's no weekend version of this. Here's the real one.</p>
+  </header>
+
+  <div class="intro">
+    <p>The AI bubble might burst. Skills don't. This roadmap has two halves. <b>Boat One</b> is the fundamentals that have stayed valuable for decades. <b>Boat Two</b> is where the field is heading. You need both.</p>
+  </div>
+
+  <nav class="toc" aria-label="Contents">
+    <div class="boat b1"><h2>Boat One · Fundamentals</h2>
+      <ol>
+        <li><a href="#stats-ml">Statistics &amp; Machine Learning</a></li>
+        <li><a href="#sql-python">SQL first, then Python</a></li>
+        <li><a href="#eda">EDA &amp; Feature Engineering</a></li>
+        <li><a href="#product">Product Sense &amp; Business</a></li>
+      </ol></div>
+    <div class="boat b2"><h2>Boat Two · Where it's going</h2>
+      <ol start="5">
+        <li><a href="#evals">LLM Evals</a></li>
+        <li><a href="#agents">Coding Agents &amp; Harnesses</a></li>
+        <li><a href="#projects">Projects: work backwards</a></li>
+        <li><a href="#interviews">Interviews</a></li>
+      </ol></div>
+  </nav>
+
+  <div class="boat-head one"><span class="tag">Boat One</span><h2>Fundamentals</h2></div>
+
+  <section class="step" id="stats-ml">
+    <h3><span class="n">1</span>Statistics &amp; Machine Learning (before any code)</h3>
+    <p class="lede">If you can't explain why a model overfits, no library will save you. Build intuition, not formula memory.</p>
+    <h4>Statistics</h4>
+    <ul>
+      <li>Distributions, probability, Bayes' theorem</li>
+      <li>Sampling, confidence intervals, hypothesis testing</li>
+      <li>A/B testing and statistical significance</li>
+      <li>Correlation vs. causation, and why it matters in real decisions</li>
+    </ul>
+    <h4>Machine Learning</h4>
+    <ul>
+      <li>Regression, classification, tree-based models, clustering</li>
+      <li>Bias–variance, regularization, cross-validation</li>
+      <li>Choosing the right metric: precision vs. recall depends on the cost of being wrong</li>
+    </ul>
+    <h4>Start with</h4>
+    <ul class="res">
+      <li><a href="https://www.youtube.com/@statquest" target="_blank" rel="noopener">StatQuest<small>intuition on stats and ML</small></a></li>
+      <li><a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener">Google ML Crash Course<small>a hands-on intro</small></a></li>
+    </ul>
+  </section>
+
+  <section class="step" id="sql-python">
+    <h3><span class="n">2</span>SQL first, then Python</h3>
+    <p class="lede">At every company, your data sits in a warehouse (Snowflake, BigQuery, Redshift, Postgres). SQL is how you get it out. Python is how you do everything after. Nobody hands you a clean CSV.</p>
+    <h4>SQL</h4>
+    <ul>
+      <li>Joins, subqueries, CTEs</li>
+      <li>Aggregations and window functions</li>
+      <li>Date and time logic</li>
+    </ul>
+    <h4>Python</h4>
+    <ul>
+      <li><b>pandas:</b> work with tables (load, filter, group, join, clean)</li>
+      <li><b>NumPy:</b> the math underneath (arrays, matrices, fast numerics)</li>
+      <li><b>scikit-learn:</b> build ML models (train, preprocess, evaluate)</li>
+      <li><b>Matplotlib / Seaborn:</b> see the data (plots, distributions, charts)</li>
+    </ul>
+    <h4>Practice</h4>
+    <ul class="res">
+      <li><a href="https://www.hackerrank.com/roles-directory/data-scientist/" target="_blank" rel="noopener">HackerRank Data Scientist track<small>scenario-based SQL and Python problems that mirror how data scientists actually get tested</small></a></li>
+    </ul>
+    <p class="note">Write code daily. When you get stuck, ask an LLM to explain the error, but you write the fix.</p>
+  </section>
+
+  <section class="step" id="eda">
+    <h3><span class="n">3</span>Exploratory Data Analysis &amp; Feature Engineering</h3>
+    <p class="lede">Real data is never clean. Most of the job happens before you train anything.</p>
+    <h4>EDA</h4>
+    <ul>
+      <li>Profile before you model: types, distributions, missing values, duplicates, outliers</li>
+      <li>Find patterns and data-quality issues</li>
+      <li>Visualize and communicate what you found</li>
+    </ul>
+    <h4>Feature Engineering</h4>
+    <ul>
+      <li>Encode categoricals, scale numerics when appropriate</li>
+      <li>Build features from dates, text, and behavior</li>
+      <li>Handle imbalanced data</li>
+      <li>Catch <b>data leakage</b> (the silent project-killer)</li>
+      <li>Build preprocessing as a pipeline, not a pile of notebook cells</li>
+    </ul>
+    <h4>Data (real only)</h4>
+    <ul class="res">
+      <li><a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener">Kaggle Datasets</a></li>
+      <li><a href="https://archive.ics.uci.edu/" target="_blank" rel="noopener">UCI Machine Learning Repository</a></li>
+      <li><a href="https://datasetsearch.research.google.com/" target="_blank" rel="noopener">Google Dataset Search</a></li>
+    </ul>
+  </section>
+
+  <section class="step" id="product">
+    <h3><span class="n">4</span>Product Sense &amp; Business Knowledge</h3>
+    <p class="lede">You can be great at ML, but if you can't turn a business problem into the right metric, the model doesn't matter.</p>
+    <ul>
+      <li>Turn a vague ask ("why is churn up?") into a measurable question</li>
+      <li>Define success <i>before</i> you build; pick the KPI</li>
+      <li>Understand funnels, retention, user behavior</li>
+      <li>Design and interpret experiments</li>
+      <li>Make the recommendation, and explain it to someone who will never read your code</li>
+    </ul>
+    <h4>Read</h4>
+    <ul class="res">
+      <li><a href="https://medium.com/@emmading" target="_blank" rel="noopener">Emma Ding on Medium<small>product sense and business-case interviews, end to end</small></a></li>
+    </ul>
+  </section>
+
+  <div class="boat-head two"><span class="tag">Boat Two</span><h2>Where the field is going</h2></div>
+
+  <section class="step" id="evals">
+    <h3><span class="n">5</span>LLM Evals</h3>
+    <p class="lede">LLMs don't have one right answer, so proving your system is actually good is becoming the job.</p>
+    <ul>
+      <li>Traditional ML evaluation vs. LLM evaluation</li>
+      <li>Eval datasets and test cases</li>
+      <li>Human evaluation and LLM-as-a-judge</li>
+      <li>Hallucination, groundedness, factual correctness</li>
+      <li>RAG evaluation and retrieval quality</li>
+      <li>Regression testing and monitoring</li>
+    </ul>
+    <h4>Guide</h4>
+    <ul class="res">
+      <li><a href="https://docs.langchain.com/langsmith/evaluation-types" target="_blank" rel="noopener">LangSmith: Evaluation Types</a></li>
+    </ul>
+  </section>
+
+  <section class="step" id="agents">
+    <h3><span class="n">6</span>Build with Coding Agents &amp; Understand Harnesses</h3>
+    <p class="lede">This is the step most roadmaps skip.</p>
+    <ul>
+      <li>Take the ML projects you already built. Feed the same data and the same preprocessing into Claude Code or Codex, and make them better: faster pipeline, cleaner features, stronger evaluation.</li>
+      <li>Learn what a harness is: the tools, memory, and loop around the model</li>
+      <li>Learn context engineering: why the same model gives great output in one setup and garbage in another</li>
+      <li>Rule: if you can't explain the code the agent wrote, you don't own it yet</li>
+    </ul>
+    <p class="note">Same problems, AI on your side. That's how engineering is done now.</p>
+  </section>
+
+  <section class="step" id="projects">
+    <h3><span class="n">7</span>Projects: work backwards</h3>
+    <p class="lede">Your resume needs three projects, one in each domain: <b>healthcare, finance, retail</b>. Don't invent a problem. Find one that industry is already facing and build the solution.</p>
+    <ol>
+      <li>Pull 10–20 job descriptions for the role you want</li>
+      <li>Tally the skills that keep repeating</li>
+      <li>Make sure your three projects prove exactly those skills</li>
+    </ol>
+    <h4>A strong project has</h4>
+    <ul>
+      <li>A real problem and real data</li>
+      <li>EDA and thoughtful feature engineering</li>
+      <li>A baseline before anything fancy</li>
+      <li>The right metric, and honest limitations</li>
+      <li>A README a recruiter understands in 60 seconds</li>
+      <li>Bonus: deployed as a simple app or API</li>
+    </ul>
+    <p class="note"><b>My favorite version:</b> pick a research paper, recreate it from scratch, let it break, and debug it until you understand why. That write-up is your interview story.</p>
+  </section>
+
+  <section class="step" id="interviews">
+    <h3><span class="n">8</span>Interviews</h3>
+    <ul>
+      <li><b>Fundamentals:</b> stats, ML, experiments, evaluation</li>
+      <li><b>Coding:</b> SQL + Python, explaining your thinking out loud</li>
+      <li><b>Product &amp; AI sense:</b> metrics, trade-offs, "how would you evaluate this AI feature?"</li>
+    </ul>
+    <p class="note">Apply before you feel ready. You never will.</p>
+  </section>
+
+  <footer>
+    <p class="sign">No shortcut. Get your hands dirty. Break it to fully make it.</p>
+    <p>— <a href="https://www.instagram.com/aiwith.ak/" target="_blank" rel="noopener">@aiwith.ak</a></p>
+  </footer>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById("theme");
+    try { var saved = localStorage.getItem("theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+    btn.addEventListener("click", function () {
+      var dark = root.getAttribute("data-theme") ? root.getAttribute("data-theme") === "dark"
+                 : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var next = dark ? "light" : "dark"; root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>
